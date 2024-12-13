@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOL AC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #eef9ff, #d4effc);
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/featured/?snow,stars') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+            border-bottom: 3px solid #0056b3;
+        }
+        nav {
+            background-color: #0056b3;
+            padding: 0.75em 1em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #f4f4f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5em;
+        }
+        .service {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5em;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .service h3 {
+            color: #007BFF;
+            margin-bottom: 0.5em;
+        }
+        .service p {
+            color: #555;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 1em;
+            color: #0056b3;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            margin: 2em 0;
+        }
+        .buttons button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+        .form-container {
+            display: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2em;
+        }
+        .form-container.active {
+            display: block;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .technician {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .technician img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبا بكم في COOL AC</h1>
+        <p>نوفر أفضل الخدمات لتركيب وصيانة أجهزة التكييف</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#about">عن الشركة</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="services">
+            <h2>خدماتنا</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>تركيب أجهزة التكييف</h3>
+                    <p>نوفر خدمات احترافية لتركيب جميع أنواع أجهزة التكييف.</p>
+                </div>
+                <div class="service">
+                    <h3>صيانة أجهزة التكييف</h3>
+                    <p>صيانة دورية لضمان عمل جهاز التكييف بكفاءة عالية.</p>
+                </div>
+                <div class="service">
+                    <h3>تنظيف أجهزة التكييف</h3>
+                    <p>تنظيف شامل للحفاظ على جودة الهواء وكفاءة التبريد.</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick="showForm('installation')">طلب تركيب</button>
+                <button onclick="showForm('repairing')">طلب صيانة</button>
+                <button onclick="showForm('cleaning')">طلب تنظيف وصيانة موسمية</button>
+            </div>
+
+            <div id="form-container" class="form-container">
+                <form>
+                    <label for="name">الاسم:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="address">العنوان:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="devices">عدد الأجهزة:</label>
+                    <input type="number" id="devices" name="devices" min="1" required>
+
+                    <label for="details">تفاصيل إضافية:</label>
+                    <textarea id="details" name="details" rows="4" placeholder="أدخل أي تفاصيل إضافية هنا..."></textarea>
+
+                    <button type="submit">إرسال الطلب</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>عن الشركة</h2>
+            <p>نحن شركة متخصصة في تقديم خدمات التكييف مع فريق من المحترفين لضمان أفضل جودة وخدمة عملاء مميزة.</p>
+        </section>
+
+        <section id="contact">
+            <h2>اتصل بنا</h2>
+            <p>لأي استفسارات، يرجى التواصل معنا عبر:</p>
+            <ul>
+                <li>الهاتف والواتساب: 01123876997</li>
+                <li>البريد الإلكتروني: cool123@gmail.com</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="technician">
+        <img src="https://source.unsplash.com/featured/?technician,AC" alt="AC Technician">
+        <p>فريقنا من الفنيين المحترفين</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 COOL AC. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+       
+        function showForm(serviceType) {
+            const formContainer = document.getElementById('form-container');
+            const serviceField = document.getElementById('details');
+            formContainer.classList.add('active');
+            serviceField.value = `طلب خاص بـ: ${serviceType}`;
+        }
+    </script>
+</body>
+</html>
